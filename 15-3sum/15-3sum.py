@@ -3,14 +3,16 @@ class Solution:
         nums.sort()
         n = len(nums)
         res = []
-        
+        solutions =set()
         for i in range(n):
             dic = {}
             
             for j in range(i):  
                 if nums[j] in dic:
                     if [nums[i],nums[j],dic[nums[j]]] not in res:
-                        res.append([nums[i],nums[j],dic[nums[j]]])
+                        solutions.add(tuple(sorted((nums[i],nums[j],dic[nums[j]]))))
+                        # res.append([nums[i],nums[j],dic[nums[j]]])
                 else:
                     dic[-(nums[j]+nums[i])] = nums[j]
-        return res
+                    
+        return [list(s) for s in solutions]
