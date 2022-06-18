@@ -9,8 +9,7 @@ class Solution:
             
             for j in range(i):  
                 if nums[j] in dic:
-                    if [nums[i],nums[j],dic[nums[j]]] not in res:
-                        solutions.add(tuple(sorted((nums[i],nums[j],dic[nums[j]]))))
+                    solutions.add(tuple(sorted((nums[i],nums[j],dic[nums[j]]))))
                         # res.append([nums[i],nums[j],dic[nums[j]]])
                 else:
                     dic[-(nums[j]+nums[i])] = nums[j]
