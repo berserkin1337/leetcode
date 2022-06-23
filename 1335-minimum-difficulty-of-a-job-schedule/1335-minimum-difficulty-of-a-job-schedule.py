@@ -15,9 +15,10 @@ class Solution:
             for j in range(1,d):
                 if j > i:
                     break
-                for k in range(j-1,i):
-                    # print(i,j,k)
-                    dp[i][j]  = min(dp[i][j], dp[k][j-1] + max(nums[k+1:i+1]))
+                curr_max = nums[i]
+                for k in range(i-1,j-2,-1):
+                    curr_max = max(curr_max,nums[k+1])
+                    dp[i][j]  = min(dp[i][j], dp[k][j-1] + curr_max)
         return dp[-1][-1]
                 
         
