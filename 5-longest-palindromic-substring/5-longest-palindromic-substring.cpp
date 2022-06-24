@@ -10,7 +10,7 @@ public:
             dp[i][i] = true;
             for(int j = i-1;j>=0;--j){
                 if(s[i]==s[j]){
-                    if (i == j+1 || dp[i-1][j+1]) dp[i][j] = true;
+                    dp[i][j] = (i == j+1 || dp[i-1][j+1] );
                 }
                 else{
                     dp[i][j] = false;
