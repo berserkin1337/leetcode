@@ -8,7 +8,7 @@ public:
             dp[i][i] = true;
             for(int j = i-1;j>=0;--j){
                 if(s[i]==s[j]){
-                    dp[i][j] =  (i==j+1)? true : dp[i-1][j+1];
+                    if (i == j+1 || dp[i-1][j+1]) dp[i][j] = true;
                 }
                 else{
                     dp[i][j] = false;
