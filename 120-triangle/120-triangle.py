@@ -12,5 +12,3 @@ class Solution:
                 else:
                     dp[i] = triangle[row][i] + dp[i-1]
         return min(dp)
-        
-        
