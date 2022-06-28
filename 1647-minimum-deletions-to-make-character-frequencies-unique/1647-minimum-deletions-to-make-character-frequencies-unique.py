@@ -19,7 +19,7 @@ class Solution:
                     arr[i] -= 1
                     ans += 1
                 dic[arr[i]] = 1
-                print(arr[i],i)
+                # print(arr[i],i)
             else:
                 dic[arr[i]] = 1
         return ans
