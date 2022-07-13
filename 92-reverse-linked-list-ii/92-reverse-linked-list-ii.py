@@ -26,7 +26,7 @@ class Solution:
             prev = now
         if curr != None:
             curr.next = now
-        print(now)
+        
         leftNode.next = head
 
         if left == 1 :
