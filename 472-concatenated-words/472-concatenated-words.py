@@ -7,8 +7,8 @@ class Solution:
         res = []
         preWords = words[::]
         preWords.pop()
-        print(preWords)
-        print(len(words))
+        # print(preWords)
+        # print(len(words))
         for i in range(len(words)-1,-1,-1):
             if(self.wordBreak(words[i],preWords)):
                 res.append(words[i])
