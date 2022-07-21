@@ -1,25 +1,21 @@
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
-        n = len(nums)
-        self.res = 0    
+        n = len(nums) 
         global lookup
-        lookup = set()
+        lookup = {}
         def target2(i,sum):
             if (i,sum) in lookup:
-                return False
+                return lookup[(i,sum)]
             if i == len(nums):
                 if sum == target:
-                    self.res += 1
-                    return True
+                    return 1
                 else:
-                    lookup.add((i,sum))
-                    return False
+                    return 0
 
             choice1 = target2(i+1,sum+nums[i])
             choice2 = target2(i+1,sum-nums[i])
-            if choice1== False and choice2==False:
-                lookup.add((i,sum))
-                return False
-            return True
-        target2(0,0)
-        return self.res
+            lookup[(i,sum)] = choice1 + choice2
+            return lookup[(i,sum)]
+            
+        
+        return target2(0,0)
