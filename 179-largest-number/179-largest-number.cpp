@@ -8,10 +8,10 @@ class Solution {
 public:
   string largestNumber(vector<int>& nums) {
     sort(nums.begin(),nums.end(),sortFunc);
-    for(int i=0;i<nums.size();++i) {
-      cout << nums[i] << " ";
-    }
-    cout << endl;
+    // for(int i=0;i<nums.size();++i) {
+    //   // cout << nums[i] << " ";
+    // }
+    // cout << endl;
     string ans = "";
     for (int i= nums.size()-1;i>=0;--i){
       ans += to_string(nums[i]);
