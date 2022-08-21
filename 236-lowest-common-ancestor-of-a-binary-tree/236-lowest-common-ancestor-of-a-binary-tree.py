@@ -15,9 +15,6 @@ class Solution:
         if root is None:
             return False
         return self.inSubTree(root.left , p)  | self.inSubTree(root.right , p)
-    
-    
-    @cache
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         
         left1 = self.inSubTree(root.left,p) & self.inSubTree(root.left,q)
