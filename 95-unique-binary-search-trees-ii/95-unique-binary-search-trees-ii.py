@@ -7,6 +7,8 @@
 class Solution:
     def generateTrees(self, n: int) -> List[Optional[TreeNode]]:
         
+        
+        @cache
         def generateBst(l,r) :
             if r < l :
                 return [None]
