@@ -16,14 +16,11 @@ class Solution:
         return self.inSubTree(root.left , p)  | self.inSubTree(root.right , p)
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         
-        left1 = self.inSubTree(root.left,p) & self.inSubTree(root.left,q)
-        right1 = self.inSubTree(root.right,p) & self.inSubTree(root.right,q)
-        
-        if( not left1) & (not right1) :
-            return root
-        elif left1:
+        if root.val > p.val and root.val > q.val :
             return self.lowestCommonAncestor(root.left,p,q)
-        else:
+        elif root.val < p.val and root.val < q.val :
             return self.lowestCommonAncestor(root.right,p,q)
+        else:
+            return root
         
         
