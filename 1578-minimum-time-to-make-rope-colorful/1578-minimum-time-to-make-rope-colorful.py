@@ -42,7 +42,7 @@ class Solution:
                     j += 1
                 res += curr - maxi
                 i = j
-                
+                i += 1
             else:
                 i += 1
         
