@@ -3,7 +3,7 @@ class Solution:
         n = len(candies)
         if sum(candies) < k :
             return 0
-        high = max(candies)
+        high = sum(candies) // k
         low = 1
         
         def isValid(num):
