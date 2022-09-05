@@ -2,7 +2,8 @@ class Solution:
     def maxChunksToSorted(self, arr: List[int]) -> int:
         n = len(arr)
         numChunk = 0
+        curMax = 0
         for i in range(n):
-            if sorted(arr[:i+1]) == [k for k in range(i+1)] :
-                numChunk += 1
+            curMax = max(curMax,arr[i])
+            numChunk += (curMax == i)
         return numChunk
