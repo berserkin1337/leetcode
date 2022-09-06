@@ -19,6 +19,8 @@ class Solution:
             while len(queue):
                 
                 [x,y] = queue.popleft()
+                if(x==n-1 and y == m-1):
+                    return True
                 # print([x,y])
                 if visited[(x,y)]:
                     continue
