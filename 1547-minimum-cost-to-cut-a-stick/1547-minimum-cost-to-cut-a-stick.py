@@ -1,16 +1,16 @@
 class Solution:
     def minCost(self, n: int, cuts: List[int]) -> int:
+        
         cuts.sort()
         
-        
         @cache
-        def dfs(i,j):
-            if j <=i:
-                return 0
-            
+        def dp(i,j):
             res = float('inf')
-            for cut in cuts:
-                if cut > i and cut < j :
-                    res = min(res,  dfs(i,cut) + dfs(cut,j) + j -  i )
+            for x in cuts:
+                if  i<x<j:
+                    curr = j - i  +  dp(i,x) + dp(x,j)
+                    res = min(res, curr)
+                    # if i == 0 and j == n:
+                    #     print(x,curr)
             return res if res != float('inf') else 0
-        return dfs(0,n)
+        return dp(0,n)
